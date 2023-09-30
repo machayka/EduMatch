@@ -1,5 +1,37 @@
 {
   "HEADER": {
-    "DESCRIPTION": "Description"
+    "DESCRIPTION_HEADER": "Welcome to EduMatch! 🌟",
+    "DESCRIPTION": "Wondering about your choice of studies? You're in the right place! Our app was created to make this important step in your life easier. By answering a few simple questions, we'll help you navigate the available options and find a course and university that best meet your expectations and passions. Begin your educational journey with us and discover which studies are ideal for you. We wish you fruitful searching!"
+  },
+  "FORM": {
+    "REGION": {
+      "LOWER_SILESIA": "Lower Silesia",
+      "KUYAVIA_POMERANIA": "Kuyavia-Pomerania",
+      "LUBLIN": "Lublin",
+      "LUBUSZ": "Lubusz",
+      "LODZ": "Łódź",
+      "LESSER_POLAND": "Lesser Poland",
+      "MASOVIA": "Masovia",
+      "OPOLE": "Opole",
+      "SUBCARPATHIA": "Subcarpathia",
+      "PODLASKIE": "Podlaskie",
+      "POMERANIA": "Pomerania",
+      "SILESIA": "Silesia",
+      "HOLY_CROSS": "Holy Cross",
+      "WARMIA_MASURIA": "Warmia-Masuria",
+      "GREATER_POLAND": "Greater Poland",
+      "WEST_POMERANIA": "West Pomerania"
+    },
+    "PLACEHOLDER": {
+      "REGION": "Select a region"
+    },
+    "LABEL": {
+      "REGION": "In which region of Poland would you like to study?",
+      "UNIVERSITY_TYPE": "What type of university do you prefer?"
+    },
+    "OPTIONS": {
+      "PUBLIC": "Public university (state-run)",
+      "PRIVATE": "Private university"
+    }
   }
 }
