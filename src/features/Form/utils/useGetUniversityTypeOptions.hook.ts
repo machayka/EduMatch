@@ -12,7 +12,7 @@ export function useUniversityTypeOptions(): SelectOption[] {
 
   return useMemo(() => {
     return Object.values(UniversityTypes).map((type) => ({
-      label: t(`FORM.OPTIONS.${type}`),
+      label: t(`FORM.OPTIONS.UNIVERSITY_TYPES.${type}`),
       value: type,
     }));
   }, [t]);

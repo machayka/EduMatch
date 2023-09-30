@@ -1,7 +1,7 @@
 {
   "HEADER": {
     "DESCRIPTION_HEADER": "Welcome to EduMatch! 🌟",
-    "DESCRIPTION": "Wondering about your choice of studies? You're in the right place! Our app was created to make this important step in your life easier. By answering a few simple questions, we'll help you navigate the available options and find a course and university that best meet your expectations and passions. Begin your educational journey with us and discover which studies are ideal for you. We wish you fruitful searching!"
+    "DESCRIPTION": "Thinking about choosing a course of study? You're in the right place! Our app has been designed to make this important step in your life easier. By answering a few simple questions, we'll help you navigate your options and find the field of study and universities that best meet your expectations and passions. Start your educational journey with us and discover which studies are ideal for you. We wish you fruitful searches!"
   },
   "FORM": {
     "REGION": {
@@ -23,15 +23,36 @@
       "WEST_POMERANIA": "West Pomerania"
     },
     "PLACEHOLDER": {
-      "REGION": "Select a region"
+      "REGION": "Select region"
     },
     "LABEL": {
       "REGION": "In which region of Poland would you like to study?",
-      "UNIVERSITY_TYPE": "What type of university do you prefer?"
+      "UNIVERSITY_TYPE": "What type of university do you prefer?",
+      "PRACTICS": "How important are student internships for you during your education?",
+      "CAMPUS": "How important is campus life for you (e.g., student clubs, events, community)?",
+      "FINANCING": "What financing options for your studies are you considering?",
+      "ADDITIONAL": "If you feel that some important information was missing in the survey that would influence your choice, please describe it below:"
     },
     "OPTIONS": {
-      "PUBLIC": "Public university (state-run)",
-      "PRIVATE": "Private university"
+      "UNIVERSITY_TYPES": {
+        "PUBLIC": "Public university (state-owned)",
+        "PRIVATE": "Private university"
+      },
+      "FINANCING": {
+        "SELF_FINANCING": "Self-financing (paying for studies from your own resources or with family support)",
+        "SCHOLARSHIP": "Academic scholarship",
+        "LOAN": "Student loan",
+        "WORK": "Working while studying",
+        "OTHER": "Other (please specify)"
+      }
+    },
+    "IMPORTANCE": {
+      "UNIMPORTANT": "Unimportant",
+      "NEUTRAL": "Neutral",
+      "IMPORTANT": "Very important"
     }
+  },
+  "BUTTON": {
+    "DONE": "Result"
   }
 }

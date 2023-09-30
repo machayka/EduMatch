@@ -27,11 +27,33 @@
     },
     "LABEL": {
       "REGION": "W którym regionie Polski chciałbyś/chciałabyś podjąć studia?",
-      "UNIVERSITY_TYPE": "Jaki typ uczelni preferujesz?"
+      "UNIVERSITY_TYPE": "Jaki typ uczelni preferujesz?",
+      "PRACTICS": "Jak ważne są dla Ciebie praktyki studenckie podczas trwania kształcenia?",
+      "CAMPUS": "Jak ważne jest dla Ciebie życie na kampusie (np. kluby studenckie, wydarzenia, społeczność)?",
+      "FINANCING": "Jakie opcje finansowania studiów bierzesz pod uwagę?",
+      "ADDITIONAL": "Jeżeli uważach, że brakowało jakichś istotnych informacji w ankiecie, które miałyby wpływ na Twój wybór, opisz je poniżej:"
     },
     "OPTIONS": {
-      "PUBLIC": "Uczelnia publiczna (państwowa)",
-      "PRIVATE": "Uczelnia prywatna"
+      "UNIVERSITY_TYPES": {
+        "PUBLIC": "Uczelnia publiczna (państwowa)",
+        "PRIVATE": "Uczelnia prywatna"
+      },
+      "FINANCING": {
+        "SELF_FINANCING": "Samofinansowanie (płacenie za studia z własnych środków lub z pomocy rodziny)",
+        "SCHOLARSHIP": "Stypendium naukowe",
+        "LOAN": "Poyczka studencka",
+        "WORK": "Praca w trakcie studiów",
+        "OTHER": "Inne (proszę podać)"
+      }
+    },
+    "IMPORTANCE": {
+      "UNIMPORTANT": "Nieistotne",
+      "NEUTRAL": "Neutralne",
+      "IMPORTANT": "Bardzo ważne"
     }
+  },
+
+  "BUTTON": {
+    "DONE": "Wynik"
   }
 }
