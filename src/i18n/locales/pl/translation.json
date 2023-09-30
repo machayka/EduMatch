@@ -1,6 +1,7 @@
 {
   "HEADER": {
-    "DESCRIPTION": "Opis"
+    "DESCRIPTION_HEADER": "Witaj w EduMatch! 🌟",
+    "DESCRIPTION": "Zastanawiasz się nad wyborem studiów? Jesteś we właściwym miejscu! Nasza aplikacja została stworzona, aby ułatwić Ci ten ważny krok w życiu. Dzięki odpowiedziom na kilka prostych pytań pomożemy Ci zorientować się w dostępnych opcjach i znaleźć kierunek studiów i uczelnie, które najlepiej odpowiadaja Twoim oczekiwaniom i pasjom. Rozpocznij swoją edukacyjną przygodę z nami i odkryj, które studia są dla Ciebie idealne. Życzymy owocnych poszukiwań!"
   },
   "FORM": {
     "REGION": {
