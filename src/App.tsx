@@ -6,6 +6,7 @@ import LanguageSwitcher from "./features/components/LanguageSwitcher/LanguageSwi
 import i18n from "./i18n/i18n";
 
 function App() {
+  console.log("Hello");
   return (
     <I18nextProvider i18n={i18n}>
       <AppWrapper>
