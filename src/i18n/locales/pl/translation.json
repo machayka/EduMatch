@@ -1,5 +1,36 @@
 {
   "HEADER": {
     "DESCRIPTION": "Opis"
+  },
+  "FORM": {
+    "REGION": {
+      "LOWER_SILESIA": "Dolnośląskie",
+      "KUYAVIA_POMERANIA": "Kujawsko-Pomorskie",
+      "LUBLIN": "Lubelskie",
+      "LUBUSZ": "Lubuskie",
+      "LODZ": "Łódzkie",
+      "LESSER_POLAND": "Małopolskie",
+      "MASOVIA": "Mazowieckie",
+      "OPOLE": "Opolskie",
+      "SUBCARPATHIA": "Podkarpackie",
+      "PODLASKIE": "Podlaskie",
+      "POMERANIA": "Pomorskie",
+      "SILESIA": "Śląskie",
+      "HOLY_CROSS": "Świętokrzyskie",
+      "WARMIA_MASURIA": "Warmińsko-Mazurskie",
+      "GREATER_POLAND": "Wielkopolskie",
+      "WEST_POMERANIA": "Zachodniopomorskie"
+    },
+    "PLACEHOLDER": {
+      "REGION": "Wybierz region"
+    },
+    "LABEL": {
+      "REGION": "W którym regionie Polski chciałbyś/chciałabyś podjąć studia?",
+      "UNIVERSITY_TYPE": "Jaki typ uczelni preferujesz?"
+    },
+    "OPTIONS": {
+      "PUBLIC": "Uczelnia publiczna (państwowa)",
+      "PRIVATE": "Uczelnia prywatna"
+    }
   }
 }
