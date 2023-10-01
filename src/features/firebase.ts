@@ -24,7 +24,6 @@ export const firebaseStorage = getStorage();
 export const firebaseFunctions = getFunctions();
 export const analytics = getAnalytics();
 
-// if (process.env.NODE_ENV == 'development') {
-//   firebaseFunctions.useEmulator('localhost', 5001);
-//   // firestore.useEmulator('localhost', 8080);
+// if (process.env.NODE_ENV === "development") {
+//   connectFunctionsEmulator(firebaseFunctions, "localhost", 5001);
 // }

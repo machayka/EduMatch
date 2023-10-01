@@ -1,7 +1,9 @@
 import { httpsCallable } from "@firebase/functions";
 import { Form } from "antd";
 import { useState } from "react";
+import { getCurrentLanguage } from "../../i18n/i18.service";
 import { DoneButton } from "../components/DoneButton";
+import { Response } from "../components/Response";
 import { firebaseFunctions } from "../firebase";
 import { Additional } from "./Additional";
 import { Campus } from "./Campus";
@@ -22,11 +24,21 @@ interface FormValues {
 
 export const FormSection: React.FC = () => {
   const [form] = Form.useForm();
+  const curLang = getCurrentLanguage();
+
+  const [response, setResponse] = useState();
+
   const handleSubmit = (values: FormValues) => {
     setLoading(true);
     console.log(values);
     const onContactFormSign = httpsCallable(firebaseFunctions, "onFormSubmit");
-    onContactFormSign(values);
+    onContactFormSign({ ...values, Language: curLang })
+      .then((response: any) => {
+        setResponse(response.data.response);
+      })
+      .catch(() => {
+        alert("Something went wrong :(");
+      });
   };
 
   const [showUniversityType, setShowUniversityType] = useState(false);
@@ -46,7 +58,11 @@ export const FormSection: React.FC = () => {
       <Financing show={showFinancing} setShowAdditinal={setShowAdditinal} />
       <Additional show={showAdditional} />
 
-      <DoneButton loading={loading} />
+      {!response ? (
+        <DoneButton loading={loading} />
+      ) : (
+        <Response response={response} />
+      )}
     </Form>
   );
 };

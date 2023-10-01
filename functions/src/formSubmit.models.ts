@@ -6,4 +6,5 @@ export interface FormSubmitValues {
   practics: number;
   region: string[];
   universityType: string[];
+  language: string;
 }

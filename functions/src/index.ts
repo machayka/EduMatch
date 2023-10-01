@@ -3,12 +3,12 @@ import OpenAI from "openai";
 import { FormSubmitValues } from "./formSubmit.models";
 
 const openai = new OpenAI({
-  apiKey: "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", // defaults to process.env["OPENAI_API_KEY"]
+  apiKey: "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", // defaults to process.env["OPENAI_API_KEY"]
 });
 
-async function callGPT() {
+async function callGPT(message: string) {
   const params: OpenAI.Chat.ChatCompletionCreateParams = {
-    messages: [{ role: "user", content: "Say this is a test" }],
+    messages: [{ role: "user", content: message }],
     model: "gpt-3.5-turbo",
   };
   const chatCompletion: OpenAI.Chat.ChatCompletion =
@@ -26,10 +26,10 @@ export const onFormSubmit = functions.https.onCall(
     practics,
     region,
     universityType,
+    language,
   }: FormSubmitValues) => {
     try {
       functions.logger.debug(
-        "Hello",
         additional,
         campus,
         financing,
@@ -38,10 +38,40 @@ export const onFormSubmit = functions.https.onCall(
         region,
         universityType
       );
+      const financingOptions = financing.map((option) => option).join(", ");
+      const regionOptions = region.map((option) => option).join(", ");
+      const universityTypeOptions = universityType
+        .map((option) => option)
+        .join(", ");
 
-      const response = await callGPT();
+      const message = `
+        Na podstawie poniższych informacji, proszę zasugeruj mi uczelnie, które najlepiej spełniają moje preferencje:
+        - Dodatkowe informacje: ${additional}
+        - jak wazny jest dobry kampus w skali od 1 do 5 (gdzie 5 to bardzo wazny a 1 to nieistotny) ${
+  campus !== 1 ? "Tak" : "Nie"
+}
+        - Możliwości finansowania: ${financingOptions}
+        - Inne opcje finansowania: ${financingOther}
+        - jak wazne sa zajecia praktyczne w skali od 1 do 5: ${practics}
+        - Preferowane regiony: ${regionOptions}
+        - Typy uczelni: ${universityTypeOptions}
+    
+        Pytania:
+        1. Które uczelnie w preferowanych regionach oferują najlepsze programy zgodne z moimi zainteresowaniami?
+        2. Jakie są główne korzyści i wady tych uczelni?
+        3. Jakie są dostępne opcje finansowania w tych uczelniach?
+        4. Które z tych uczelni oferują najwięcej możliwości praktyk?
+        5. Czy te uczelnie mają kampusy, które spełniają moje preferencje?
+        6. Jakie są opinie studentów na temat tych uczelni?
+    
+        Dziękuję za pomoc!
+      Odpowiedz w języku ${language}`;
+      const response = await callGPT(message);
 
-      functions.logger.info(response);
+      const gptResponse = response.choices[0].message.content;
+      functions.logger.info(gptResponse);
+
+      return { response: gptResponse };
     } catch (error) {
       functions.logger.error("Błąd", error);
       throw new functions.https.HttpsError("internal", "Błąd");
