@@ -1,19 +1,50 @@
-/**
- * Import function triggers from their respective submodules:
- *
- * import {onCall} from "firebase-functions/v2/https";
- * import {onDocumentWritten} from "firebase-functions/v2/firestore";
- *
- * See a full list of supported triggers at https://firebase.google.com/docs/functions
- */
+import * as functions from "firebase-functions";
+import OpenAI from "openai";
+import { FormSubmitValues } from "./formSubmit.models";
 
-// import {onRequest} from "firebase-functions/v2/https";
-// import * as logger from "firebase-functions/logger";
+const openai = new OpenAI({
+  apiKey: "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", // defaults to process.env["OPENAI_API_KEY"]
+});
 
-// Start writing functions
-// https://firebase.google.com/docs/functions/typescript
+async function callGPT() {
+  const params: OpenAI.Chat.ChatCompletionCreateParams = {
+    messages: [{ role: "user", content: "Say this is a test" }],
+    model: "gpt-3.5-turbo",
+  };
+  const chatCompletion: OpenAI.Chat.ChatCompletion =
+    await openai.chat.completions.create(params);
 
-// export const helloWorld = onRequest((request, response) => {
-//   logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+  return chatCompletion;
+}
+
+export const onFormSubmit = functions.https.onCall(
+  async ({
+    additional,
+    campus,
+    financing,
+    financingOther,
+    practics,
+    region,
+    universityType,
+  }: FormSubmitValues) => {
+    try {
+      functions.logger.debug(
+        "Hello",
+        additional,
+        campus,
+        financing,
+        financingOther,
+        practics,
+        region,
+        universityType
+      );
+
+      const response = await callGPT();
+
+      functions.logger.info(response);
+    } catch (error) {
+      functions.logger.error("Błąd", error);
+      throw new functions.https.HttpsError("internal", "Błąd");
+    }
+  }
+);
