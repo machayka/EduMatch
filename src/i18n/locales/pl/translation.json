@@ -52,8 +52,11 @@
       "IMPORTANT": "Bardzo ważne"
     }
   },
-
   "BUTTON": {
     "DONE": "Wynik"
+  },
+  "RESPONSE": {
+    "WAITING_TIME": "Czas oczekiwania ok. 20 sekund",
+    "HEADER": "Twój EduMatch"
   }
 }

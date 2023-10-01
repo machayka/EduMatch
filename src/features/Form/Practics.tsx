@@ -35,14 +35,14 @@ export const Practics: React.FC<Props> = ({ show, setShowCampus }) => {
             }}
           >
             <Label>3. {t("FORM.LABEL.PRACTICS")}</Label>
-            <Form.Item name="practics"
-                       rules={[{ required: true, message: "Choose at least 1 option" }]}>
+            <Form.Item name="practics">
               <Slider
                 min={1}
                 max={5}
                 onChange={handleChange}
                 value={sliderValue}
                 marks={marks}
+                defaultValue={1}
               />
             </Form.Item>
           </div>

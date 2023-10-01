@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const Campus: React.FC<Props> = ({ show, setShowFinancing }) => {
-  const [sliderValue, setSliderValue] = useState(1);
+  const [sliderValue, setSliderValue] = useState(0);
 
   const handleChange = (value: number) => {
     setSliderValue(value);
@@ -34,14 +34,14 @@ export const Campus: React.FC<Props> = ({ show, setShowFinancing }) => {
             }}
           >
             <Label>4. {t("FORM.LABEL.CAMPUS")}</Label>
-            <Form.Item name="campus"
-              rules={[{ required: true, message: "Choose at least 1 option" }]}>
+            <Form.Item name="campus">
               <Slider
                 min={1}
                 max={5}
                 onChange={handleChange}
                 value={sliderValue}
                 marks={marks}
+                defaultValue={1}
               />
             </Form.Item>
           </div>

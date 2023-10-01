@@ -29,6 +29,13 @@ export const FormSection: React.FC = () => {
   const [response, setResponse] = useState();
 
   const handleSubmit = (values: FormValues) => {
+    if (values.practics === undefined) {
+      values.practics = 1;
+    }
+    if (values.campus === undefined) {
+      values.practics = 1;
+    }
+
     setLoading(true);
     console.log(values);
     const onContactFormSign = httpsCallable(firebaseFunctions, "onFormSubmit");

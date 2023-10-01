@@ -44,6 +44,13 @@ export const onFormSubmit = functions.https.onCall(
         .map((option) => option)
         .join(", ");
 
+      const responseLanguage =
+        language === "pl" ?
+          "Odpowiedz w języku polskim" :
+          language === "en" ?
+            "Respond in English" :
+            "Unsupported language";
+
       const message = `
         Na podstawie poniższych informacji, proszę zasugeruj mi uczelnie, które najlepiej spełniają moje preferencje:
         - Dodatkowe informacje: ${additional}
@@ -58,14 +65,10 @@ export const onFormSubmit = functions.https.onCall(
     
         Pytania:
         1. Które uczelnie w preferowanych regionach oferują najlepsze programy zgodne z moimi zainteresowaniami?
-        2. Jakie są główne korzyści i wady tych uczelni?
-        3. Jakie są dostępne opcje finansowania w tych uczelniach?
-        4. Które z tych uczelni oferują najwięcej możliwości praktyk?
-        5. Czy te uczelnie mają kampusy, które spełniają moje preferencje?
-        6. Jakie są opinie studentów na temat tych uczelni?
+        
     
         Dziękuję za pomoc!
-      Odpowiedz w języku ${language}`;
+       ${responseLanguage}`;
       const response = await callGPT(message);
 
       const gptResponse = response.choices[0].message.content;

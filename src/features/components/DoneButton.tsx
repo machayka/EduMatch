@@ -19,6 +19,11 @@ export const DoneButton: React.FC<Props> = ({ loading }) => {
         ) : (
           t("BUTTON.DONE")
         )}
+        {loading ? (
+          <div className="opacity-50 mt-4 w-full flex items-center justify-center">
+            <div className="text-base">{t("RESPONSE.WAITING_TIME")}</div>
+          </div>
+        ) : null}
       </Button>
     </div>
   );

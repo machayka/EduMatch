@@ -54,5 +54,9 @@
   },
   "BUTTON": {
     "DONE": "Result"
+  },
+  "RESPONSE": {
+    "WAITING_TIME": "Waiting time approx. 20 seconds",
+    "HEADER": "Your EduMatch"
   }
 }
