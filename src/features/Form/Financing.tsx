@@ -19,7 +19,8 @@ export const Financing: React.FC<Props> = ({ show, setShowAdditinal }) => {
       {show ? (
         <Section>
           <Label>5. {t("FORM.LABEL.FINANCING")}</Label>
-          <Form.Item name="financing">
+          <Form.Item name="financing"
+                     rules={[{ required: true, message: "Choose at least 1 option" }]}>
             <Checkbox.Group
               options={financingOptions}
               className="flex flex-col"

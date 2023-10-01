@@ -34,7 +34,8 @@ export const Campus: React.FC<Props> = ({ show, setShowFinancing }) => {
             }}
           >
             <Label>4. {t("FORM.LABEL.CAMPUS")}</Label>
-            <Form.Item name="campus">
+            <Form.Item name="campus"
+              rules={[{ required: true, message: "Choose at least 1 option" }]}>
               <Slider
                 min={1}
                 max={5}

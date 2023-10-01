@@ -15,7 +15,10 @@ export const Additional: React.FC<Props> = ({ show }) => {
       {show ? (
         <Section>
           <Label>6. {t("FORM.LABEL.ADDITIONAL")}</Label>
-          <Form.Item name="additional">
+          <Form.Item
+              name="additional"
+              rules={[{ required: true, message: "Field can not be empty" }]}>
+
             <Input />
           </Form.Item>
         </Section>

@@ -16,7 +16,9 @@ export const Region: React.FC<Props> = ({ setShowUniversityType }) => {
   return (
     <Section>
       <Label>1. {t("FORM.LABEL.REGION")}</Label>
-      <Form.Item name="region">
+      <Form.Item name="region"
+                 rules={[{ required: true, message: "Choose at least 1 option" }]}>
+
         <Select
           mode="multiple"
           options={regionOption}

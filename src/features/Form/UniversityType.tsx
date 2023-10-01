@@ -19,7 +19,8 @@ export const UniversityType: React.FC<Props> = ({ show, setPractics }) => {
       {show ? (
         <Section>
           <Label>2. {t("FORM.LABEL.UNIVERSITY_TYPE")}</Label>
-          <Form.Item name="universityType">
+          <Form.Item name="universityType"
+                     rules={[{ required: true, message: "Choose at least 1 option" }]}>
             <Checkbox.Group
               options={universityTypeOptions}
               className="flex flex-col"
