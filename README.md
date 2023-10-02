@@ -3,6 +3,9 @@
 ## About
 EduMatch is a project developed during HackYeah 2023, the largest stationary hackathon in Europe held at Tauron Arena, Kraków from 30.09 to 01.10. This event gathers enthusiasts of programming, design, and innovation to create solutions capable of changing the world over a 24-hour.
 
+## Results
+https://edumatch.site/
+
 ## Technologies
 - React
 - Firebase
