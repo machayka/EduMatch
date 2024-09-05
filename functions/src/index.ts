@@ -3,7 +3,7 @@ import OpenAI from "openai";
 import { FormSubmitValues } from "./formSubmit.models";
 
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "XYZ",
 });
 
 async function callGPT(message: string) {
@@ -45,18 +45,18 @@ export const onFormSubmit = functions.https.onCall(
         .join(", ");
 
       const responseLanguage =
-        language === "pl" ?
-          "Odpowiedz w języku polskim" :
-          language === "en" ?
-            "Respond in English" :
-            "Unsupported language";
+        language === "pl"
+          ? "Odpowiedz w języku polskim"
+          : language === "en"
+          ? "Respond in English"
+          : "Unsupported language";
 
       const message = `
         Na podstawie poniższych informacji, proszę zasugeruj mi uczelnie, które najlepiej spełniają moje preferencje:
         - Dodatkowe informacje: ${additional}
         - jak wazny jest dobry kampus w skali od 1 do 5 (gdzie 5 to bardzo wazny a 1 to nieistotny) ${
-  campus !== 1 ? "Tak" : "Nie"
-}
+          campus !== 1 ? "Tak" : "Nie"
+        }
 
         - Możliwości finansowania: ${financingOptions}
         - Inne opcje finansowania: ${financingOther}
